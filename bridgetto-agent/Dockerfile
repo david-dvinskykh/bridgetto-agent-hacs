@@ -1,5 +1,6 @@
-ARG BUILD_FROM=alpine:3.20
-FROM ${BUILD_FROM}
+# Plain Alpine on purpose: the Supervisor default base (s6-overlay) cannot
+# run under the Docker init that `init: true` gives this app.
+FROM docker.io/library/alpine:3.20
 
 # Only a bootstrap lives in this image: no agent binary, no agent source.
 # The agent is downloaded from the user's own control plane on first start,
@@ -14,4 +15,5 @@ RUN apk add --no-cache ca-certificates curl jq util-linux-misc \
 COPY run.sh /run.sh
 RUN chmod 0755 /run.sh
 
+ENTRYPOINT []
 CMD ["/run.sh"]

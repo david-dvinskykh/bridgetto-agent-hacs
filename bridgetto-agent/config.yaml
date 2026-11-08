@@ -1,5 +1,5 @@
 name: Bridgetto Agent
-version: "1.0.0"
+version: "1.0.1"
 slug: bridgetto_agent
 description: Connects this Home Assistant host to a Bridgetto control plane. The agent itself is downloaded from your control plane, verified and kept up to date by it.
 url: https://github.com/david-dvinskykh/bridgetto-agent-hacs
