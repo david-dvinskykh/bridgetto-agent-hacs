@@ -1,0 +1,27 @@
+name: Bridgetto Agent
+version: "1.0.0"
+slug: bridgetto_agent
+description: Connects this Home Assistant host to a Bridgetto control plane. The agent itself is downloaded from your control plane, verified and kept up to date by it.
+url: https://github.com/david-dvinskykh/bridgetto-agent-hacs
+arch:
+  - amd64
+  - aarch64
+startup: services
+boot: auto
+init: true
+host_network: true
+docker_api: true
+options:
+  control_plane_url: ""
+  enroll_token: ""
+  hub_url: ""
+  hub_ca_sha256: ""
+  org_id: ""
+  log_level: info
+schema:
+  control_plane_url: url
+  enroll_token: password?
+  hub_url: str?
+  hub_ca_sha256: match(^[0-9a-fA-F:]*$)?
+  org_id: str?
+  log_level: list(debug|info|warn|error)

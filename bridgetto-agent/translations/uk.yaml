@@ -1,0 +1,18 @@
+configuration:
+  control_plane_url:
+    name: Адреса control plane
+    description: HTTPS-адреса вашого Bridgetto, напр. https://bridgetto.example.com. Агент завантажується саме звідти.
+  enroll_token:
+    name: Токен підключення
+    description: Одноразовий токен із control plane (Сервери → Додати сервер). Потрібен лише під час першого запуску.
+  hub_url:
+    name: Адреса хаба
+    description: Необов'язково. Замінює адресу хаба, яку віддає control plane (wss://…).
+  hub_ca_sha256:
+    name: Відбиток сертифіката хаба
+    description: Необов'язково. SHA-256 сертифіката хаба або CA з його ланцюжка, з команди встановлення.
+  org_id:
+    name: ID організації
+    description: Необов'язково. Агент відхилятиме команди для інших організацій.
+  log_level:
+    name: Рівень журналу
